@@ -9,19 +9,23 @@
 import UIKit
 
 class BorderLayer: CALayer {
-    override func draw(in ctx: CGContext) {
-        let lineWidth:CGFloat = 2.0
+    var lineColor: CGColor = UIColor.blue.cgColor
+    var lineWidth: CGFloat = 2.0
+    var startAngle: CGFloat = 0.0
+    var endAngle: CGFloat = 0.0
 
+    override func draw(in ctx: CGContext) {
         let center = CGPoint(x:bounds.width/2, y: bounds.height/2)
+
         ctx.beginPath()
-        ctx.setStrokeColor(UIColor.blue.cgColor)
+        ctx.setStrokeColor(lineColor)
         ctx.setLineWidth(lineWidth)
         ctx.addArc(
             center: center,
             radius: bounds.height/2 - lineWidth,
-            startAngle: 0,
-            endAngle: 2.0 * CGFloat.pi,
-            clockwise: false
+            startAngle: startAngle,
+            endAngle: endAngle,
+            clockwise: true
         )
         ctx.drawPath(using: .stroke)
     }
