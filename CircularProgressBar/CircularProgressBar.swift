@@ -11,6 +11,7 @@ import UIKit
 @IBDesignable
 open class CircularProgressBar: UIView {
     var view: UIView!
+    let darkBorderLayer = BorderLayer()
 
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -26,9 +27,15 @@ open class CircularProgressBar: UIView {
 
     override open func layoutSubviews() {
         super.layoutSubviews()
+        darkBorderLayer.frame = self.bounds
+
+        darkBorderLayer.setNeedsDisplay()
     }
 
-    open func commonInit() { }
+    open func commonInit() {
+        darkBorderLayer.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
+        self.layer.addSublayer(darkBorderLayer)
+    }
 
     func loadViewFromNib() {
         let bundle = Bundle(for: type(of: self))

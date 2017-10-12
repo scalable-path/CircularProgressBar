@@ -16,6 +16,7 @@
 		E032FD971F717F7400543BC1 /* CircularProgressBarUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E032FD961F717F7400543BC1 /* CircularProgressBarUITests.swift */; };
 		E032FDA51F71802500543BC1 /* CircularProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E032FDA41F71802500543BC1 /* CircularProgressBar.swift */; };
 		E032FDA71F7180F200543BC1 /* CircularProgressBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = E032FDA61F7180F200543BC1 /* CircularProgressBar.xib */; };
+		E0D7F10D1F73B77600C666D8 /* BorderLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D7F10C1F73B77600C666D8 /* BorderLayer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		E032FD981F717F7400543BC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E032FDA41F71802500543BC1 /* CircularProgressBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularProgressBar.swift; sourceTree = "<group>"; };
 		E032FDA61F7180F200543BC1 /* CircularProgressBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CircularProgressBar.xib; sourceTree = "<group>"; };
+		E0D7F10C1F73B77600C666D8 /* BorderLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderLayer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 				E032FD7F1F717F7300543BC1 /* LaunchScreen.storyboard */,
 				E032FD821F717F7300543BC1 /* Info.plist */,
 				E032FDA41F71802500543BC1 /* CircularProgressBar.swift */,
+				E0D7F10C1F73B77600C666D8 /* BorderLayer.swift */,
 				E032FDA61F7180F200543BC1 /* CircularProgressBar.xib */,
 			);
 			path = CircularProgressBar;
@@ -269,6 +272,7 @@
 				E032FD791F717F7300543BC1 /* ViewController.swift in Sources */,
 				E032FD771F717F7300543BC1 /* AppDelegate.swift in Sources */,
 				E032FDA51F71802500543BC1 /* CircularProgressBar.swift in Sources */,
+				E0D7F10D1F73B77600C666D8 /* BorderLayer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -513,6 +517,7 @@
 				E032FD9D1F717F7400543BC1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E032FD9E1F717F7400543BC1 /* Build configuration list for PBXNativeTarget "CircularProgressBarTests" */ = {
 			isa = XCConfigurationList;
@@ -521,6 +526,7 @@
 				E032FDA01F717F7400543BC1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E032FDA11F717F7400543BC1 /* Build configuration list for PBXNativeTarget "CircularProgressBarUITests" */ = {
 			isa = XCConfigurationList;
@@ -529,6 +535,7 @@
 				E032FDA31F717F7400543BC1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
