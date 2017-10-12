@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -28,14 +29,33 @@
                                     <constraint firstAttribute="height" constant="250" id="Lcl-Ic-4rF"/>
                                     <constraint firstAttribute="width" constant="250" id="sSw-Yq-a7v"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="progress">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="aqT-uF-k51">
+                                <rect key="frame" x="34" y="528.5" width="307" height="31"/>
+                                <color key="minimumTrackTintColor" red="0.72549019609999998" green="0.84705882349999995" blue="0.33725490200000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="maximumTrackTintColor" red="0.36078431370000003" green="0.36862745099999999" blue="0.3294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="sliderAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="tn3-Fl-11t"/>
+                                </connections>
+                            </slider>
                         </subviews>
                         <color key="backgroundColor" red="0.2156862745" green="0.20000000000000001" blue="0.23529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="aqT-uF-k51" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="BBT-l1-L5V"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="aqT-uF-k51" secondAttribute="trailing" constant="20" id="aL5-Og-IIR"/>
+                            <constraint firstItem="aqT-uF-k51" firstAttribute="top" secondItem="QxG-ns-oMA" secondAttribute="bottom" constant="70" id="mNu-74-HBn"/>
                             <constraint firstItem="QxG-ns-oMA" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="nDy-Jl-trF"/>
                             <constraint firstItem="QxG-ns-oMA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rMr-aj-h0v"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="circularProgressBar" destination="QxG-ns-oMA" id="MuO-eu-XzE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

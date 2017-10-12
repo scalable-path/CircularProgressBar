@@ -11,6 +11,10 @@ import UIKit
 @IBDesignable
 open class CircularProgressBar: UIView {
     var view: UIView!
+
+    static let startAngle = 3/2 * CGFloat.pi
+    static let endAngle = 7/2 * CGFloat.pi
+
     let darkBorderLayer = BorderLayer()
     let progressBorderLayer = BorderLayer()
 
@@ -26,6 +30,14 @@ open class CircularProgressBar: UIView {
     @IBInspectable var subtitle: String = "" {
         didSet {
             subtitleLabel.text = subtitle
+        }
+    }
+
+    @IBInspectable var progress: CGFloat = 0.0 {
+        didSet {
+            print(progress)
+            print(progressBorderLayer.endAngle)
+            progressBorderLayer.endAngle = CircularProgressBar.radianForValue(progress)
         }
     }
 
@@ -57,8 +69,8 @@ open class CircularProgressBar: UIView {
             blue: 148/255,
             alpha: 1
         ).cgColor
-        darkBorderLayer.startAngle = 0
-        darkBorderLayer.endAngle = 2.0 * CGFloat.pi
+        darkBorderLayer.startAngle = CircularProgressBar.startAngle
+        darkBorderLayer.endAngle = CircularProgressBar.endAngle
         self.layer.addSublayer(darkBorderLayer)
 
         progressBorderLayer.lineColor = UIColor(
@@ -67,8 +79,8 @@ open class CircularProgressBar: UIView {
             blue: 45/255,
             alpha: 1
         ).cgColor
-        progressBorderLayer.startAngle = 0
-        progressBorderLayer.endAngle = CGFloat.pi
+        progressBorderLayer.startAngle = CircularProgressBar.startAngle
+        progressBorderLayer.endAngle = CircularProgressBar.endAngle
         self.layer.addSublayer(progressBorderLayer)
     }
 
@@ -86,4 +98,20 @@ open class CircularProgressBar: UIView {
         addSubview(view)
         self.view = view
     }
+
+    internal class func radianForValue(_ value: CGFloat) -> CGFloat {
+        let realValue = CircularProgressBar.sanitizeValue(value)
+        return (realValue * 4/2 * CGFloat.pi / 100) + CircularProgressBar.startAngle
+    }
+
+    internal class func sanitizeValue(_ value: CGFloat) -> CGFloat {
+        var realValue = value
+        if value < 0 {
+            realValue = 0
+        } else if value > 100 {
+            realValue = 100
+        }
+        return realValue
+    }
+
 }
